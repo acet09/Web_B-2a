@@ -1,0 +1,335 @@
+@charset "UTF-8";
+:root{
+  /* color */
+  --C-main: #00c73c;
+  --C-sub1: #737373;
+
+  /* font-size */
+  --fS-30: 30px;
+  --fS-25: 25px;
+  --fS-18: 18px;
+  --fS-14: 14px;
+
+  /* font-color */
+  --fC-main: #333333;
+  --fC-whith: #fafafa;
+  --fC-gray: #777777;
+
+  /* font-weight */
+  --fW-100: 100;
+  --fW-700: 700;
+
+  /* Favorite px */
+  --Fp5: 5px;
+  --Fp10: 10px;
+}
+*{margin: 0; padding: 0;}
+a{text-decoration: none; display: block; color: var(--fC-main);}
+header, section, footer, div{box-sizing: border-box;}
+li{list-style: none;} img, button{cursor: pointer; border: none; outline: none;}
+body{background-color: #ffffff;}
+.txhd{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
+}
+.clearfix::before, .clearfix::after{
+  display: block;
+  content: '';
+  clear: both;
+}
+.cover{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* header */
+header .cover{
+  position: relative;
+  height: 100px;
+  background-color: var(--fC-whith);
+}
+header .cover .logo{
+  float: left;
+  margin-left: 10px;
+}
+header .cover .logo a{
+  width: 200px;
+  height: 40px;
+  padding: 30px 0;
+}
+#GNB{
+  position: absolute;
+  top: 35px;
+  right: 10px;
+  text-align: center;
+  z-index: 100;
+}
+#GNB li{
+  width: 125px;
+}
+#GNB a{
+  padding: 20px 0px;
+  color: #333;
+}
+#GNB .main > li > a{
+  font-size: var(--fS-18);
+  font-weight: var(--fW-700);
+}
+#GNB .main > li{
+  float: left;
+}
+#GNB .main > li:hover > a{
+  color: var(--fC-whith);
+  background-color: var(--C-main);
+}
+#GNB .sub{
+  display: none;
+  height: 245px;
+  background-color: #efefef;
+}
+#GNB .sub li a:hover{
+  color: var(--fC-whith);
+  background-color:#00e444;
+}
+header .cover .GNB__bg{
+  display: none;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 1200px;
+  height: 250px;
+  background-color: #efefef;
+  z-index: 90;
+}
+
+/* slide */
+section#slide{
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+.slide__box{  
+  position: absolute;
+}
+.slide__box > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1200px;
+  height: 300px;
+  background: no-repeat center/cover;
+}
+.slide__box .slide__con1{
+  background-image: url(../images/slide/01.jpg);
+}
+.slide__box .slide__con2{
+  background-image: url(../images/slide/02.jpg);
+}
+.slide__box .slide__con3{
+  background-image: url(../images/slide/03.jpg);
+}
+.slide__box > div > a{
+  font-size: var(--fS-25);
+  font-weight: var(--fW-700);
+  color: var(--fC-whith);
+  padding: 30px;
+  background-color: rgba(25,25,25,0.6);
+  border-radius: var(--Fp10);
+  text-align: center;
+}
+.slide__box > div > a > p{
+  color: var(--C-main);
+}
+
+/* contents */
+section#contents{
+  display: grid;
+  grid-template-columns: 386.67px 386.67px 386.67px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+  position: relative;
+  height: 200px;
+  background-color: var(--C-main);
+}
+section#contents > div{
+  height: 180px;
+  padding: var(--Fp10);
+  background-color: var(--fC-whith);
+}
+section#contents .con__title{
+  font-size: var(--fS-18);
+  font-weight: var(--fW-700);
+  cursor: default;
+}
+
+/* 공지사항 */
+#notice ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 140px;
+}
+#notice ul li{
+  border-bottom: 1px solid var(--fC-gray);
+}
+#notice ul li:hover:first-child a{
+  color: var(--C-main);
+}
+#notice ul li a{
+  display: flex;  
+  justify-content: space-between;
+}
+#notice ul li a p{
+  width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: var(--fS-14);
+}
+#notice ul li a span{
+  font-size: var(--fS-14);
+}
+/* pop */
+section#contents #pop{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 330px;
+  height: 200px;
+  top: -70%;
+  left: 35%;
+  background-color: var(--fC-whith);
+  border: 5px solid var(--C-sub1);
+  border-radius: var(--Fp10);
+  z-index: 999;
+}
+#pop h3{
+  font-size: var(--fS-18);
+  font-weight: var(--fW-700);
+  color: var(--C-main);
+}
+#pop p{
+  padding: 15px 20px;
+}
+#pop button{
+  padding: 8px;
+  border-radius: var(--Fp10);
+  background-color: #cfcfcf;
+}
+#pop button:hover{
+  background-color: var(--C-main);
+  color: var(--fC-whith);
+}
+
+/* 갤러리 */
+#gallery .gall__box{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 145px;
+}
+#gallery .gall__box > div{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: var(--Fp5);
+  overflow: hidden;
+}
+#gallery .gall__box > div > img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+}
+#gallery .gall__box > div > a{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  color: var(--fC-whith);
+  background-color: rgba(25, 25, 25, 0.6);
+  opacity: 0;
+  transition: all .3s;
+}
+#gallery .gall__box > div:hover > a{
+  opacity: 1;
+}
+
+/* banner */
+#banner{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+#banner a{
+  padding: 10px;
+  color: var(--fC-whith);
+  border-radius: var(--Fp5);
+  background-color: rgba(25,25,25,0.6);
+  transition: all .3s;
+}
+#banner a:hover{
+  color: var(--C-main);
+}
+
+/* footer */
+footer .cover{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  background-color: var(--C-sub1);
+}
+footer .cover address{
+  font-style: normal;
+}
+footer .cover address p{
+  margin-top: var(--Fp5);
+}
+footer .cover .ft__menu{
+  text-align: center;
+}
+footer .cover .ft__menu .ft__top a{
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 0 10px 10px;
+  float: left;
+}
+footer .cover .ft__menu .ft__top a img{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+footer .cover .ft__menu .ft__top a p{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  letter-spacing: -1px;
+  font-size: 13px;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  color: var(--fC-whith);
+  opacity: 0;
+  transition: all .3s;
+}
+footer .cover .ft__menu .ft__top a:hover p{
+  opacity: 1;
+}
